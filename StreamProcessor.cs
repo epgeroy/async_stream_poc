@@ -23,7 +23,7 @@ namespace async_stream_poc
 
         public async Task Process()
         {
-            await foreach(var item in DataflowBlock.ReceiveAllAsync<int>(_stream, CancellationToken.None))
+            await foreach(int item in DataflowBlock.ReceiveAllAsync<int>(_stream, CancellationToken.None))
             {
                 Console.WriteLine($"Processing {item}");
             }
